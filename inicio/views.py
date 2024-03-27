@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def cargarInicio(request):
-    return render(request, 'base.html')
+    return render(request, 'inicio.html')
