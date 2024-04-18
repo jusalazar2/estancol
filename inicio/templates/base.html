@@ -150,36 +150,49 @@
 
 
  <!-- start TOP BAR 2-->
-<header class="fixed-top">
-
+ <header class="fixed-top">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
     <div class="container-fluid">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="../static/images/Logo-ESTANCOL-100X24.png" alt="Nombre de la imagen">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+        <a class="navbar-brand col-lg-1 me-0" href="/"> <!-- Centrado -->
+          <img src="../static/images/Logo-ESTANCOL-100X24.png" alt="Nombre de la imagen">
         </a>
 
-      
-        <ul class="nav me-auto col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0  ">
-          <li class="nav-item" ><a href="/" class="nav-link link-body-emphasis px-2 ">Inicio</a></li>
-          <li class="nav-item" ><a href="/nosotros" class="nav-link link-body-emphasis px-2 ">Nosotros</a></li>
-          <li class="nav-item" ><a href="/servicios" class="nav-link link-body-emphasis px-2 ">Servicios</a></li>
-          <li class="nav-item" ><a href="/productos" class="nav-link link-body-emphasis px-2 ">Productos</a></li>
-          <li class="nav-item" ><a href="/contactenos" class="nav-link link-body-emphasis px-2 ">Contactenos</a></li>
+        <ul class="navbar-nav col-lg-7 justify-content-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/nosotros">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/servicios">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/productos">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contactenos">Contactenos</a>
+          </li>
         </ul>
-       
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-        </form>
-
-        <div class="">
-          <button type="button" class="btn btn-outline-success me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+        <div class="d-lg-flex col-lg-4 justify-content-lg-end">
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+          </form>
+          <button class="btn btn-outline-success me-2">Login</button>
+          <button class="btn btn-warning">Sign-up</button>
         </div>
       </div>
     </div>
- 
-  </header>
+  </nav>
+</header>
+
+
 
 <!-- end TOP BAR 2-->
 
