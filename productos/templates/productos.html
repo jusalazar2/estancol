@@ -2,8 +2,92 @@
 
 {% extends 'base.html' %}
 
-{% block svg %}
+{% block css %}
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
 
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+  }
+
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
+
+  .bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+  }
+</style>
+{% endblock %}
+
+{% block css2 %}
+<link href="../static/css/cheatsheet.css" rel="stylesheet">
+{% endblock %}
+
+{% block svg %}
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="check2" viewBox="0 0 16 16">
     <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -22,877 +106,968 @@
 {% endblock %}
 
 {% block content %}
-<main>
 
-    <section class="py-5 text-center container" >
-      <div class="row " >
-        <div class="col-lg-10 col-md-6 mx-auto">
-          <h1 class="fw-light">Productos</h1>
-          <p class="lead text-body-secondary">¡Libera el potencial de tu hogar u oficina con nuestras estanterías versátiles y elegantes! Diseñadas con materiales de alta calidad y un estilo moderno, nuestras estanterías ofrecen organización personalizada para maximizar el espacio disponible. Ya sea que necesites almacenar libros, decoraciones o suministros de oficina, nuestras estanterías hacen que la tarea sea sencilla y sin complicaciones, con fácil montaje y mantenimiento mínimo. ¡Aprovecha nuestra oferta especial por tiempo limitado y transforma tu espacio hoy mismo!</p>
-          <p>
-            <a href="#" class="btn btn-outline-success my-2">Cotiza</a>
-            <a href="#" class="btn btn-warning my-2">Compra</a>
-          </p>
+
+<aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-1 mb-xl-3 px-2">
+  <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">Estaciones de trabajo</h2>
+  <nav class="small" id="toc">
+    <ul class="list-unstyled">
+      <li class="my-2">
+        <button type="button" class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse" aria-controls="contents-collapse">Maderas</button>
+        <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#maderas-tipos">Tipos</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">Images</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tables">Tables</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#figures">Figures</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <button type="button" class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#forms-collapse" aria-controls="forms-collapse">Forms</button>
+        <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#overview">Overview</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#disabled-forms">Disabled forms</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#sizing">Sizing</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#input-group">Input group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#floating-labels">Floating labels</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#validation">Validation</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <button type="button" class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#components-collapse" aria-controls="components-collapse">Components</button>
+        <ul class="list-unstyled ps-3 collapse" id="components-collapse">
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#accordion">Accordion</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#alerts">Alerts</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#badge">Badge</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#breadcrumb">Breadcrumb</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#buttons">Buttons</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#button-group">Button group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#card">Card</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#carousel">Carousel</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#dropdowns">Dropdowns</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#list-group">List group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#modal">Modal</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#navs">Navs</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#navbar">Navbar</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#pagination">Pagination</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#popovers">Popovers</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#progress">Progress</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#scrollspy">Scrollspy</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#spinners">Spinners</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#toasts">Toasts</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tooltips">Tooltips</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <button type="button" class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#descargas-collapse" aria-controls="descargas-collapse">Descargas</button>
+        <ul class="list-unstyled ps-3 collapse" id="descargas-collapse">
+          <li>
+            <a class="d-flex align-items-center" href="../static/pdf/CATALOGO MOBILIARIO - ESTANCOL.pdf" download="CATALOGO MOBILIARIO - ESTANCOL.pdf">Estaciones de trabajo</a>
+            <a class="d-flex align-items-center" href="../static/pdf/CATALOGO (Mezzanine Cantilever).pdf" download="CATALOGO (Mezzanine Cantilever).pdf">Estanteria Mezzanine</a>
+            <a class="d-flex align-items-center" href="../static/pdf/Catalogo interlocutoras y tandem ESTANCOL.PDF" download="Catalogo interlocutoras y tandem ESTANCOL.PDF">Sillas interlocutoras </a>
+            <a class="d-flex align-items-center" href="../static/pdf/Catalogo sillas - ESTANCOL.PDF" download="Catalogo sillas - ESTANCOL.pdf">Sillas</a>
+            <a class="d-flex align-items-center" href="../static/pdf/CATALOGO ESTANTERIA - ESTANCOL.pdf" download="CATALOGO ESTANTERIA - ESTANCOL.pdf">Estanteria</a>
+
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+
+
+  <div class="bd-cheatsheet container-fluid ">
+    <section id="content">
+      <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Maderas</h2>
+
+      <div class="col" >
+        <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+          <div class="card-body">
+            <p class="card-text">Nos preocupamos por brindar a nuestros clientes las mejores alternativas de diseño, acabados, texturas con el fin de llenar sus expectativas y satisfacer su necesidad.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                
+              </div>
+              <small class="text-body-emphasis">9 productos</small>
+            </div>
+          </div>
         </div>
       </div>
+  
+      <article  id="maderas-tipos">
+        <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+          <h3>Tipos</h3>          
+        </div>
+  
+       
+        <div style="margin-left: -15px; margin-right: +30px; ">
+          <div class="bd-example-snippet bd-code-snippet">
+            <div class="album bg-body-tertiary">
+              <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-1 " >
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image1.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image2.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image3.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image4.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image5.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image6.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image7.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image8.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image9.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image10.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image11.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image12.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image13.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image14.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image15.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image16.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image17.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image18.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image19.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image20.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image21.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image22.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image23.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image24.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image25.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image26.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image27.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image28.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image29.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image30.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image31.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image32.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image33.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image34.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image35.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image36.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image37.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                      <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                          <title>Producto #1</title>
+                          <image href="../static/images/image38.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+                          <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
+                          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
+                        </svg>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
+                          </div>
+                          <small class="text-body-emphasis">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>    
     </section>
-  
-    <div class="album py-5 bg-body-tertiary">
-      <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image1.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image2.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image3.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image4.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image5.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image6.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image7.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image8.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image9.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
+  </div>
 
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image10.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image11.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image12.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
+<main>
+</main>
+{% endblock %}
 
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image13.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image14.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image15.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
+{% block js %}
 
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image16.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image17.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image18.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image19.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image20.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image21.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image22.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image23.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image24.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image25.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image26.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image27.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image28.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image29.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image30.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image31.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image32.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image33.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image34.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image35.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image36.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image37.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col" >
-            <div class="card shadow-sm" style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-              <div style="border: 2px solid green; display: inline-block; border-radius: 7px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Producto #1</title>
-                  <image href="../static/images/image38.jpg" width="100%" height="100%" preserveAspectRatio="none" />
-                  <rect class="opacity-25" width="100%" height="100%" rx="5" ry="5" fill="var(--bs-secondary-bg)"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Producto #1</text>
-                </svg>
-              </div>
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-success">Ver</button>
-                    <button type="button" class="btn btn-sm btn-outline-primary">Comprar</button>
-                  </div>
-                  <small class="text-body-emphasis">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-         
-        </div>
-      </div>
-    </div>
-  
-  </main>
-  
+<script src="../static/assets/js/cheatsheet.js"></script>
 {% endblock %}

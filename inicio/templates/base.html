@@ -11,9 +11,6 @@
     <title>Estancol</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-
-    
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
     <link href="../static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -96,14 +93,17 @@
         display: block !important;
       }
     </style>
-
+      {% block css %}
+      {% endblock %}
     
     <!-- Custom styles for this template -->
     <link href="../static/css/carousel.css" rel="stylesheet">
     <link href="../static/css/features.css" rel="stylesheet">
     <link href="../static/css/checkout.css" rel="stylesheet">
+    {% block css2 %}
+    {% endblock %}
   </head>
-  <body>
+  <body class="bg-body-tertiary" >
 
     {% block svg %}
     {% endblock %}
@@ -269,8 +269,9 @@
  <!-- end FOOTER 2-->
 
 
-<script src="../static/assets/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../static/assets/js/checkout.js"></script></body>
-
+      <script src="../static/assets/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="../static/assets/js/checkout.js"></script></body>
+      {% block js %}
+      {% endblock %}
     </body>
 </html>
