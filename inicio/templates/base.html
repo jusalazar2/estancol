@@ -131,53 +131,7 @@
         /* ============ small devices .end// ============ */
         
     </style>  
-    <script type="text/javascript">
-//	window.addEventListener("resize", function() {
-//		"use strict"; window.location.reload(); 
-//	});
-	  document.addEventListener("DOMContentLoaded", function(){
-        /////// Prevent closing from click inside dropdown
-      document.querySelectorAll('.dropdown-menu').forEach(function(element){
-        element.addEventListener('click', function (e) {
-          e.stopPropagation();
-        });
-      })
-      // make it as accordion for smaller screens
-      if (window.innerWidth < 992) {
-
-        // close all inner dropdowns when parent is closed
-        document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
-          everydropdown.addEventListener('hidden.bs.dropdown', function () {
-            // after dropdown is hidden, then find all submenus
-              this.querySelectorAll('.submenu').forEach(function(everysubmenu){
-                // hide every submenu as well
-                everysubmenu.style.display = 'none';
-              });
-          })
-        });
-        
-        document.querySelectorAll('.dropdown-menu a').forEach(function(element){
-          element.addEventListener('click', function (e) {
-      
-              let nextEl = this.nextElementSibling;
-              if(nextEl && nextEl.classList.contains('submenu')) {	
-                // prevent opening link if link needs to open dropdown
-                e.preventDefault();
-                console.log(nextEl);
-                if(nextEl.style.display == 'block'){
-                  nextEl.style.display = 'none';
-                } else {
-                  nextEl.style.display = 'block';
-                }
-
-              }
-          });
-        })
-      }
-      // end if innerWidth
-	  }); 
-	// DOMContentLoaded  end
-    </script>
+    
 
     <!-- Custom styles for this template -->
     <link href="../static/css/carousel.css" rel="stylesheet">
@@ -191,8 +145,6 @@
     {% block svg %}
     {% endblock %}
  
-   
-
       <!-- start button style -->
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
@@ -231,10 +183,8 @@
 
     <!-- end button style -->
 
-    
-
  <!-- start TOP BAR 2-->
- <header class="fixed-top">
+ <header class="fixed-top ">
   <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
@@ -330,11 +280,7 @@
  
 </header>
 
-
-
 <!-- end TOP BAR 2-->
-
-
 {% block content %}
 {% endblock %}
 
@@ -410,5 +356,52 @@
       <script src="../static/assets/js/checkout.js"></script></body>
       {% block js %}
       {% endblock %}
+      <script type="text/javascript">
+//	window.addEventListener("resize", function() {
+//		"use strict"; window.location.reload(); 
+//	});
+	  document.addEventListener("DOMContentLoaded", function(){
+        /////// Prevent closing from click inside dropdown
+      document.querySelectorAll('.dropdown-menu').forEach(function(element){
+        element.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      })
+      // make it as accordion for smaller screens
+      if (window.innerWidth < 992) {
+
+        // close all inner dropdowns when parent is closed
+        document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+          everydropdown.addEventListener('hidden.bs.dropdown', function () {
+            // after dropdown is hidden, then find all submenus
+              this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+                // hide every submenu as well
+                everysubmenu.style.display = 'none';
+              });
+          })
+        });
+        
+        document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+          element.addEventListener('click', function (e) {
+      
+              let nextEl = this.nextElementSibling;
+              if(nextEl && nextEl.classList.contains('submenu')) {	
+                // prevent opening link if link needs to open dropdown
+                e.preventDefault();
+                console.log(nextEl);
+                if(nextEl.style.display == 'block'){
+                  nextEl.style.display = 'none';
+                } else {
+                  nextEl.style.display = 'block';
+                }
+
+              }
+          });
+        })
+      }
+      // end if innerWidth
+	  }); 
+	// DOMContentLoaded  end
+    </script>
     </body>
 </html>

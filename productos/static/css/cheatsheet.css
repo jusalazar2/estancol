@@ -123,7 +123,7 @@ body {
   .bd-cheatsheet article {
     display: inherit; /* 1 */
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 4fr;
     grid-column: 1 / span 2;
     gap: inherit; /* 1 */
   }
