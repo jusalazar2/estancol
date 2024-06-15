@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../static/plugin/components/Font Awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../static/plugin/whatsapp-chat-support.css">
 
+    <!-- Style Boton de theme page -->
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -99,44 +100,39 @@
       }
     </style>
 
-      {% block css %}
-      {% endblock %}
+    <!-- Style Boton de menu -->
     <style type="text/css">
-
-        /* ============ desktop view ============ */
-        @media all and (min-width: 992px) {
-        
-          .dropdown-menu li{
-            position: relative;
-          }
-          .dropdown-menu .submenu{ 
-            display: none;
-            position: absolute;
-            left:100%; top:-7px;
-          }
-          .dropdown-menu .submenu-left{ 
-            right:100%; left:auto;
-          }
-        
-          .dropdown-menu > li:hover{ background-color: #f1f1f1 }
-          .dropdown-menu > li:hover > .submenu{
-            display: block;
-          }
-        }	
-        /* ============ desktop view .end// ============ */
-        
-        /* ============ small devices ============ */
-        @media (max-width: 991px) {
-        
+      /* ============ desktop view ============ */
+      @media all and (min-width: 992px) {
+        .dropdown-menu li{
+          position: relative;
+        }
+        .dropdown-menu .submenu{ 
+          display: none;
+          position: absolute;
+          left:100%; top:-7px;
+        }
+        .dropdown-menu .submenu-left{ 
+          right:100%; left:auto;
+        }
+        .dropdown-menu > li:hover{ background-color: #22a11d }
+        .dropdown-menu > li:hover > .submenu{
+          display: block;
+        }
+      }	
+      /* ============ desktop view .end// ============ */
+      
+      /* ============ small devices ============ */
+      @media (max-width: 991px) {
         .dropdown-menu .dropdown-menu{
             margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
         }
-        
-        }	
-        /* ============ small devices .end// ============ */
-        
+      }	
+      /* ============ small devices .end// ============ */
     </style>  
-    
+
+    {% block css %}
+    {% endblock %}
 
     <!-- Custom styles for this template -->
     <link href="../static/css/carousel.css" rel="stylesheet">
@@ -149,8 +145,8 @@
 
     {% block svg %}
     {% endblock %}
-    <div id="WABoton"></div>
-      <!-- start button style -->
+    
+    <!-- start button style -->
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
               id="bd-theme"
@@ -185,327 +181,442 @@
         </li>
       </ul>
     </div>
-
     <!-- end button style -->
 
- <!-- start TOP BAR 2-->
- <header class="fixed-top ">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- start TOP BAR -->
+    <header class="fixed-top ">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-      <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-        <a class="navbar-brand col-lg-1 me-0" href="/"> <!-- Centrado -->
-          <img src="../static/images/Logo-ESTANCOL-100X24.png" alt="Nombre de la imagen">
-        </a>
+          <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+            <a class="navbar-brand col-lg-1 me-0" href="/"> <!-- Centrado -->
+              <img src="../static/images/Logo-ESTANCOL-100X24.png" alt="Nombre de la imagen">
+            </a>
 
-        <ul class="navbar-nav col-lg-7 justify-content-lg-center">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/nosotros">Nosotros</a>
-          </li>
-          <!-- Menu de servicios 
-          <li class="nav-item">
-            <a class="nav-link" href="/servicios">Servicios</a>
-          </li> -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/productos" data-bs-toggle="dropdown">Productos</a>
-            <ul class="dropdown-menu">              
-              <li><a class="dropdown-item" href="#">ESTANTERIAS &raquo; </a>
-                <ul class="submenu dropdown-menu">
-                  <li><a class="dropdown-item" href="#">ESTANTERIA LIVIANA &raquo; </a>
+            <ul class="navbar-nav col-lg-7 justify-content-lg-center">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/nosotros">Nosotros</a>
+              </li>
+              <!-- Menu de servicios 
+              <li class="nav-item">
+                <a class="nav-link" href="/servicios">Servicios</a>
+              </li> -->
+              <li class="nav-item"> 
+                <a class="nav-link" href="{% url 'productos' %}">Productos</a>
+              </li> 
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Catalogo</a>
+                <ul class="dropdown-menu">              
+                  <li><a class="dropdown-item" href="/productos">ESTANTERIAS &raquo; </a>
                     <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">LIVIANA ECO</a></li>
-                      <li><a class="dropdown-item" href="#">LIVIANA STANDARD</a></li>
+                      <li><a class="dropdown-item" href="#">ESTANTERIA LIVIANA &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">LIVIANA ECO</a></li>
+                          <li><a class="dropdown-item" href="#">LIVIANA STANDARD</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="#">ESTANTERIA BIBLIOFIJOS</a></li>
+                      <li><a class="dropdown-item" href="#">ESTANTERIA SEMIPESADA</a></li>
+                      <li><a class="dropdown-item" href="#">ESTANTERIA PESADA</a></li>
+                      <li><a class="dropdown-item" href="#">ESTANTERIA SUPERPESADA</a></li>
                     </ul>
                   </li>
-                  <li><a class="dropdown-item" href="#">ESTANTERIA BIBLIOFIJOS</a></li>
-                  <li><a class="dropdown-item" href="#">ESTANTERIA SEMIPESADA</a></li>
-                  <li><a class="dropdown-item" href="#">ESTANTERIA PESADA</a></li>
-                  <li><a class="dropdown-item" href="#">ESTANTERIA SUPERPESADA</a></li>
+                  <li><a class="dropdown-item" href="#">ESTANTERIA MEZANINE</a></li>
+                  <li><a class="dropdown-item" href="#">ESTANTERIA CANTILIVER</a>
+                  <li><a class="dropdown-item" href="#">COMPLEMENTOS DE ESTANTERIAS &raquo; </a>
+                    <ul class="submenu dropdown-menu">
+                      <li><a class="dropdown-item" href="#">COMPLEMENTOS ENTREPISOS &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">ENTREPISO TROQUELADO</a></li>
+                          <li><a class="dropdown-item" href="#">ENTREPISO RANURADO</a></li>
+                          <li><a class="dropdown-item" href="#">ENTREPISO MALLA</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="#">COMPLEMENTOS ENTREPAÑOS &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">ENTREPAÑOS TIPO GALVANIZADO</a></li>
+                          <li><a class="dropdown-item" href="#">ENTREPAÑOS TIPO MADERA</a></li>
+                          <li><a class="dropdown-item" href="#">ENTREPAÑOS TIPO MALLA</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="#">COMPLEMENTOS VARIOS &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">LINEAS DE VIDA</a></li>
+                          <li><a class="dropdown-item" href="#">DISTANCIADOR DE MARCO</a></li>
+                          <li><a class="dropdown-item" href="#">PIE DE MARCO CON CHAPETA PARA VIGA</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="#">MOBILIARIO &raquo; </a>
+                    <ul class="submenu dropdown-menu">
+                      <li><a class="dropdown-item" href="#">ESTACIONES DE TRABAJO &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">ESTACION TIPO CALIFORNIA</a></li>
+                          <li><a class="dropdown-item" href="#">ESTACION TIPO VERTIX</a></li>
+                          <li><a class="dropdown-item" href="#">ESTACION TIPO BOOMERANG</a></li>
+                          <li><a class="dropdown-item" href="#">ESTACION TIPO LINEAR</a></li>
+                          <li><a class="dropdown-item" href="#">ESTACION TIPO PÓLI</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="#">MESAS DE JUNTAS &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">MESA TIPO CIRCULAR</a></li>
+                          <li><a class="dropdown-item" href="#">MESA TIPO ELIPTICAS</a></li>
+                          <li><a class="dropdown-item" href="#">MESA TIPO RECTAS</a></li>
+                          <li><a class="dropdown-item" href="#">MESA TIPO IRREGULARES</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="#">OFICINA GERENCIAL &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">GERENCIAL TIPO DYNAMO</a></li>
+                          <li><a class="dropdown-item" href="#">GERENCIAL TIPO IMPERIAL</a></li>
+                          <li><a class="dropdown-item" href="#">GERENCIAL TIPO BLOCK</a></li>
+                          <li><a class="dropdown-item" href="#">GERENCIAL TIPO STYLUS</a></li>
+                          <li><a class="dropdown-item" href="#">GERENCIAL TIPO DYNAMIX</a></li>
+                          <li><a class="dropdown-item" href="#">GERENCIAL OTROS TIPOS</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="#">RECEPCIONES &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">RECEPCION TIPO MORP8</a></li>
+                          <li><a class="dropdown-item" href="#">RECEPCION CIRCULAR </a></li>
+                          <li><a class="dropdown-item" href="#">RECEPCION OTROS TIPOS</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="#">COMPLEMENTOS DE MOBILIARIOS &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">ARCHIVADORES</a></li>
+                          <li><a class="dropdown-item" href="#">APOYOS</a></li>
+                          <li><a class="dropdown-item" href="#">MUEBLES COMPACTOS</a></li>
+                          <li><a class="dropdown-item" href="#">GABINETES AEREOS</a></li>
+                          <li><a class="dropdown-item" href="#">LOCKERS</a></li>  
+                        </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="#">MUEBLES EN FORMICA &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">APOYOS Y BASES</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="#">ARCHIVO MOVIL &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">ARCHIVO TIPO MANUAL</a></li>
+                          <li><a class="dropdown-item" href="#">ARCHIVO TIPO MECANICO</a></li>
+                          <li><a class="dropdown-item" href="#">ARCHIVO TIPO ESPECIAL</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="#">DIVISIONES MODULARES &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">DIVISIONES Y PUERTAS EN VIDRIOS</a></li>
+                          <li><a class="dropdown-item" href="#">VIDRIO TEMPLADO</a></li>
+                          <li><a class="dropdown-item" href="#">VIDRIO PROYECTANTE</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>    
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Catalogo Juan
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Estanterias &raquo;</a>
+                        <ul class="submenu dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Estanteria liviana &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'productos' %}#Liviana_eco">Liviana eco</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'productos' %}#Liviana_standard">Liviana standard</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Estanteria bibliofijos</a></li>
+                            <li><a class="dropdown-item" href="#">Estanteria semipesada</a></li>
+                            <li><a class="dropdown-item" href="#">Estanteria pesada</a></li>
+                            <li><a class="dropdown-item" href="#">Estanteria superpesada</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Estanteria mezanine</a></li>
+                    <li><a class="dropdown-item" href="#">Estanteria cantilever</a></li>
+                    <li><a class="dropdown-item" href="#">Complementos de estanterias &raquo;</a>
+                        <ul class="submenu dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Complementos entrepisos &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Entrepiso troquelado</a></li>
+                                    <li><a class="dropdown-item" href="#">Entrepiso ranurado</a></li>
+                                    <li><a class="dropdown-item" href="#">Entrepiso malla</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Complementos entrepaños &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Entrepaños tipo galvanizado</a></li>
+                                    <li><a class="dropdown-item" href="#">Entrepaños tipo madera</a></li>
+                                    <li><a class="dropdown-item" href="#">Entrepaños tipo malla</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Complementos varios &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Lineas de vida</a></li>
+                                    <li><a class="dropdown-item" href="#">Distanciador de marco</a></li>
+                                    <li><a class="dropdown-item" href="#">Pie de marco con chapeta para viga</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Mobiliario &raquo;</a>
+                        <ul class="submenu dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Estaciones de trabajo &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Estacion tipo california</a></li>
+                                    <li><a class="dropdown-item" href="#">Estacion tipo vertix</a></li>
+                                    <li><a class="dropdown-item" href="#">Estacion tipo boomerang</a></li>
+                                    <li><a class="dropdown-item" href="#">Estacion tipo linear</a></li>
+                                    <li><a class="dropdown-item" href="#">Estacion tipo póli</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Mesas de juntas &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Mesa tipo circular</a></li>
+                                    <li><a class="dropdown-item" href="#">Mesa tipo elipticas</a></li>
+                                    <li><a class="dropdown-item" href="#">Mesa tipo rectas</a></li>
+                                    <li><a class="dropdown-item" href="#">Mesa tipo irregulares</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Oficina gerencial &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Gerencial tipo dynamo</a></li>
+                                    <li><a class="dropdown-item" href="#">Gerencial tipo imperial</a></li>
+                                    <li><a class="dropdown-item" href="#">Gerencial tipo block</a></li>
+                                    <li><a class="dropdown-item" href="#">Gerencial tipo stylus</a></li>
+                                    <li><a class="dropdown-item" href="#">Gerencial tipo dynamix</a></li>
+                                    <li><a class="dropdown-item" href="#">Gerencial otros tipos</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Recepciones &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Recepcion tipo morp8</a></li>
+                                    <li><a class="dropdown-item" href="#">Recepcion circular</a></li>
+                                    <li><a class="dropdown-item" href="#">Recepcion otros tipos</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Complementos de mobiliarios &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Archivadores</a></li>
+                                    <li><a class="dropdown-item" href="#">Apoyos</a></li>
+                                    <li><a class="dropdown-item" href="#">Muebles compactos</a></li>
+                                    <li><a class="dropdown-item" href="#">Gabinetes aereos</a></li>
+                                    <li><a class="dropdown-item" href="#">Lockers</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Muebles en formica &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Apoyos y bases</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Archivo movil &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Archivo tipo manual</a></li>
+                                    <li><a class="dropdown-item" href="#">Archivo tipo mecanico</a></li>
+                                    <li><a class="dropdown-item" href="#">Archivo tipo especial</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Divisiones modulares &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Divisiones y puertas en vidrios</a></li>
+                                    <li><a class="dropdown-item" href="#">Vidrio templado</a></li>
+                                    <li><a class="dropdown-item" href="#">Vidrio proyectante</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
               </li>
-              <li><a class="dropdown-item" href="#">ESTANTERIA MEZANINE</a></li>
-              <li><a class="dropdown-item" href="#">ESTANTERIA CANTILIVER</a>
-              <li><a class="dropdown-item" href="#">COMPLEMENTOS DE ESTANTERIAS &raquo; </a>
-                <ul class="submenu dropdown-menu">
-                  <li><a class="dropdown-item" href="#">COMPLEMENTOS ENTREPISOS &raquo; </a>
-                    <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">ENTREPISO TROQUELADO</a></li>
-                      <li><a class="dropdown-item" href="#">ENTREPISO RANURADO</a></li>
-                      <li><a class="dropdown-item" href="#">ENTREPISO MALLA</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="#">COMPLEMENTOS ENTREPAÑOS &raquo; </a>
-                    <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">ENTREPAÑOS TIPO GALVANIZADO</a></li>
-                      <li><a class="dropdown-item" href="#">ENTREPAÑOS TIPO MADERA</a></li>
-                      <li><a class="dropdown-item" href="#">ENTREPAÑOS TIPO MALLA</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="#">COMPLEMENTOS VARIOS &raquo; </a>
-                    <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">LINEAS DE VIDA</a></li>
-                      <li><a class="dropdown-item" href="#">DISTANCIADOR DE MARCO</a></li>
-                      <li><a class="dropdown-item" href="#">PIE DE MARCO CON CHAPETA PARA VIGA</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a class="dropdown-item" href="#">MOBILIARIO &raquo; </a>
-                <ul class="submenu dropdown-menu">
-                  <li><a class="dropdown-item" href="#">ESTACIONES DE TRABAJO &raquo; </a>
-                    <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">ESTACION TIPO CALIFORNIA</a></li>
-                      <li><a class="dropdown-item" href="#">ESTACION TIPO VERTIX</a></li>
-                      <li><a class="dropdown-item" href="#">ESTACION TIPO BOOMERANG</a></li>
-                      <li><a class="dropdown-item" href="#">ESTACION TIPO LINEAR</a></li>
-                      <li><a class="dropdown-item" href="#">ESTACION TIPO PÓLI</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="#">MESAS DE JUNTAS &raquo; </a>
-                    <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">MESA TIPO CIRCULAR</a></li>
-                      <li><a class="dropdown-item" href="#">MESA TIPO ELIPTICAS</a></li>
-                      <li><a class="dropdown-item" href="#">MESA TIPO RECTAS</a></li>
-                      <li><a class="dropdown-item" href="#">MESA TIPO IRREGULARES</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="#">OFICINA GERENCIAL &raquo; </a>
-                    <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">GERENCIAL TIPO DYNAMO</a></li>
-                      <li><a class="dropdown-item" href="#">GERENCIAL TIPO IMPERIAL</a></li>
-                      <li><a class="dropdown-item" href="#">GERENCIAL TIPO BLOCK</a></li>
-                      <li><a class="dropdown-item" href="#">GERENCIAL TIPO STYLUS</a></li>
-                      <li><a class="dropdown-item" href="#">GERENCIAL TIPO DYNAMIX</a></li>
-                      <li><a class="dropdown-item" href="#">GERENCIAL OTROS TIPOS</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="#">RECEPCIONES &raquo; </a>
-                    <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">RECEPCION TIPO MORP8</a></li>
-                      <li><a class="dropdown-item" href="#">RECEPCION CIRCULAR </a></li>
-                      <li><a class="dropdown-item" href="#">RECEPCION OTROS TIPOS</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="#">COMPLEMENTOS DE MOBILIARIOS &raquo; </a>
-                    <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">ARCHIVADORES</a></li>
-                      <li><a class="dropdown-item" href="#">APOYOS</a></li>
-                      <li><a class="dropdown-item" href="#">MUEBLES COMPACTOS</a></li>
-                      <li><a class="dropdown-item" href="#">GABINETES AEREOS</a></li>
-                      <li><a class="dropdown-item" href="#">LOCKERS</a></li>  
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="#">MUEBLES EN FORMICA &raquo; </a>
-                    <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">APOYOS Y BASES</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="#">ARCHIVO MOVIL &raquo; </a>
-                    <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">ARCHIVO TIPO MANUAL</a></li>
-                      <li><a class="dropdown-item" href="#">ARCHIVO TIPO MECANICO</a></li>
-                      <li><a class="dropdown-item" href="#">ARCHIVO TIPO ESPECIAL</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="#">DIVISIONES MODULARES &raquo; </a>
-                    <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">DIVISIONES Y PUERTAS EN VIDRIOS</a></li>
-                      <li><a class="dropdown-item" href="#">VIDRIO TEMPLADO</a></li>
-                      <li><a class="dropdown-item" href="#">VIDRIO PROYECTANTE</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>    
-          
 
-          <li class="nav-item">
-            <a class="nav-link" href="/contactenos">Contactenos</a>
-          </li>
-          <!-- Menu de un solo nivel 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  More items  </a>
-              <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#"> Dropdown item 1 </a></li>
-              <li><a class="dropdown-item" href="#"> Dropdown item 2 &raquo; </a>
-                 <ul class="submenu dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Submenu item 1</a></li>
-                  <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
-                  <li><a class="dropdown-item" href="#">Submenu item 3</a></li>
-               </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="/contactenos">Contactenos</a>
               </li>
-              <li><a class="dropdown-item" href="#"> Dropdown item 3 &raquo; </a>
-                 <ul class="submenu dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Another submenu 1</a></li>
-                  <li><a class="dropdown-item" href="#">Another submenu 2</a></li>
-                  <li><a class="dropdown-item" href="#">Another submenu 3</a></li>
-                  <li><a class="dropdown-item" href="#">Another submenu 4</a></li>
-               </ul>
-              </li>
-              <li><a class="dropdown-item" href="#"> Dropdown item 4 &raquo;</a>
-                 <ul class="submenu dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Another submenu 1</a></li>
-                  <li><a class="dropdown-item" href="#">Another submenu 2</a></li>
-                  <li><a class="dropdown-item" href="#">Another submenu 3</a></li>
-                  <li><a class="dropdown-item" href="#">Another submenu 4</a></li>
-               </ul>
-              </li>
-              <li><a class="dropdown-item" href="#"> Dropdown item 5 </a></li>
-              <li><a class="dropdown-item" href="#"> Dropdown item 6 </a></li>
-              </ul>
-          </li> -->
-          <!-- Menu de dos niveles
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Treeview menu  </a>
-              <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#"> Dropdown item 1 </a></li>
-              <li><a class="dropdown-item" href="#"> Dropdown item 2 &raquo; </a>
-                 <ul class="submenu dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Submenu item 1</a></li>
-                  <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
-                  <li><a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
+              <!-- Menu de un solo nivel 
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  More items  </a>
+                  <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"> Dropdown item 1 </a></li>
+                  <li><a class="dropdown-item" href="#"> Dropdown item 2 &raquo; </a>
                     <ul class="submenu dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Multi level 1</a></li>
-                      <li><a class="dropdown-item" href="#">Multi level 2</a></li>
+                      <li><a class="dropdown-item" href="#">Submenu item 1</a></li>
+                      <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
+                      <li><a class="dropdown-item" href="#">Submenu item 3</a></li>
                   </ul>
                   </li>
-                  <li><a class="dropdown-item" href="#">Submenu item 4</a></li>
-                  <li><a class="dropdown-item" href="#">Submenu item 5</a></li>
-               </ul>
-              </li>
-              <li><a class="dropdown-item" href="#"> Dropdown item 3 </a></li>
-              <li><a class="dropdown-item" href="#"> Dropdown item 4 </a>
-              </ul>
-          </li>  -->  
-        </ul>
+                  <li><a class="dropdown-item" href="#"> Dropdown item 3 &raquo; </a>
+                    <ul class="submenu dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Another submenu 1</a></li>
+                      <li><a class="dropdown-item" href="#">Another submenu 2</a></li>
+                      <li><a class="dropdown-item" href="#">Another submenu 3</a></li>
+                      <li><a class="dropdown-item" href="#">Another submenu 4</a></li>
+                  </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="#"> Dropdown item 4 &raquo;</a>
+                    <ul class="submenu dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Another submenu 1</a></li>
+                      <li><a class="dropdown-item" href="#">Another submenu 2</a></li>
+                      <li><a class="dropdown-item" href="#">Another submenu 3</a></li>
+                      <li><a class="dropdown-item" href="#">Another submenu 4</a></li>
+                  </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="#"> Dropdown item 5 </a></li>
+                  <li><a class="dropdown-item" href="#"> Dropdown item 6 </a></li>
+                  </ul>
+              </li> -->
+              <!-- Menu de dos niveles
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Treeview menu  </a>
+                  <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"> Dropdown item 1 </a></li>
+                  <li><a class="dropdown-item" href="#"> Dropdown item 2 &raquo; </a>
+                    <ul class="submenu dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Submenu item 1</a></li>
+                      <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
+                      <li><a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
+                        <ul class="submenu dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Multi level 1</a></li>
+                          <li><a class="dropdown-item" href="#">Multi level 2</a></li>
+                      </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="#">Submenu item 4</a></li>
+                      <li><a class="dropdown-item" href="#">Submenu item 5</a></li>
+                  </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="#"> Dropdown item 3 </a></li>
+                  <li><a class="dropdown-item" href="#"> Dropdown item 4 </a>
+                  </ul>
+              </li>  -->  
+            </ul>
 
-        <div class="d-lg-flex col-lg-4 justify-content-lg-end">
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-            <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-          </form>
-          <button class="btn btn-outline-success me-2">Login</button>
-          <button class="btn btn-warning">Sign-up</button>
-        </div>
-      </div>
-    </div>
-  </nav>
- 
-</header>
-
-<!-- end TOP BAR 2-->
-{% block content %}
-{% endblock %}
-
- <!-- start FOOTER 2-->
-<div class="container">
-  
-  <footer class="py-5">
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"></div>
-    <div class="row">
-      <div class="col-6 col-md-4 mb-3">
-        
-        <h5>Excelencia en Innovación y Logística: Más de 20 años liderando la fabricación de Racks Industriales y Mobiliario de élite. Descubra la diferencia en Estancol.</h5>
-        <!--   
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-        </ul>
-        --> 
-      </div>
-
-      <div class="col-6 col-md-4 mb-3">
-        <h5>Te puede interesar </h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-body-secondary">Inicio</a></li>
-          <li class="nav-item mb-2"><a href="/nosotros" class="nav-link p-0 text-body-secondary">Nosotros</a></li>
-          <li class="nav-item mb-2"><a href="/servicios" class="nav-link p-0 text-body-secondary">Servicios</a></li>
-          <li class="nav-item mb-2"><a href="/productos" class="nav-link p-0 text-body-secondary">Productos</a></li>
-          <li class="nav-item mb-2"><a href="/contactenos" class="nav-link p-0 text-body-secondary">contactenos</a></li>
-        </ul>
-      </div>
-
-      <div class="col-6 col-md-4 mb-4">
-        <h5>Contáctanos</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">www.estancol.co</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">proyectos@estanteriasdecolombia.com</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">gerencia@estanteríasdecolombia.com</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">(57) 741 24 06</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">(+57) 320 25 45 789</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Carrera 69ª No 31-83 Sur  Br. Carvajal</a></li>
-        </ul>
-      </div>
-
-      <div class="col-md-6  mb-2">
-        <form>
-          <h5>Suscribete a nuestra noticias <p class="float-end"><a href="#">Regresar al inicio</a></p></h5>
-          
-          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-            <label for="newsletter1" class="visually-hidden">Correo electronico</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Correo electronico">
-            <button class="btn btn-primary" type="button">Subscribe</button>
+            <div class="d-lg-flex col-lg-4 justify-content-lg-end">
+              <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+              </form>
+              <button class="btn btn-outline-success me-2">Login</button>
+              <button class="btn btn-warning">Sign-up</button>
+            </div>
           </div>
-        </form>
-      </div>
-    </div>
+        </div>
+      </nav>
+    
+    </header>
+    <!-- end TOP BAR -->
 
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p>&copy; 2024 Estancol, SAS. Todos los derechos reservados.</p>
-      <ul class="list-unstyled d-flex">
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
-      </ul>
-    </div>
-  </footer>
-</div>
-<!-- end FOOTER 2-->
+    {% block content %}
+    {% endblock %}
 
-<!-- Button Whatsapp Structure 
-https://www.youtube.com/watch?v=wnOMA7qBu2w&t=751s - Video poniendo boton whatsapp
-https://github.com/juscoder/whatsapp-chat-support/tree/main - Repo 
--->
-<div class="whatsapp_chat_support wcs_fixed_left" id="button-w">
-  <div class="wcs_button wcs_button_circle">
-    <span class="fa fa-whatsapp"></span>
-  </div>  
-  <div class="wcs_popup">
-    <div class="wcs_popup_close">
-      <span class="fa fa-close"></span>
+    <!-- start FOOTER 2-->
+    <div class="container">
+      
+      <footer class="py-5">
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"></div>
+        <div class="row">
+          <div class="col-6 col-md-4 mb-3">
+            
+            <h5>Excelencia en Innovación y Logística: Más de 20 años liderando la fabricación de Racks Industriales y Mobiliario de élite. Descubra la diferencia en Estancol.</h5>
+            <!--   
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+            --> 
+          </div>
+
+          <div class="col-6 col-md-4 mb-3">
+            <h5>Te puede interesar </h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-body-secondary">Inicio</a></li>
+              <li class="nav-item mb-2"><a href="/nosotros" class="nav-link p-0 text-body-secondary">Nosotros</a></li>
+              <li class="nav-item mb-2"><a href="/servicios" class="nav-link p-0 text-body-secondary">Servicios</a></li>
+              <li class="nav-item mb-2"><a href="/productos" class="nav-link p-0 text-body-secondary">Productos</a></li>
+              <li class="nav-item mb-2"><a href="/contactenos" class="nav-link p-0 text-body-secondary">contactenos</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-4 mb-4">
+            <h5>Contáctanos</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">www.estancol.co</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">proyectos@estanteriasdecolombia.com</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">gerencia@estanteríasdecolombia.com</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">(57) 741 24 06</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">(+57) 320 25 45 789</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Carrera 69ª No 31-83 Sur  Br. Carvajal</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-6  mb-2">
+            <form>
+              <h5>Suscribete a nuestra noticias <p class="float-end"><a href="#">Regresar al inicio</a></p></h5>
+              
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Correo electronico</label>
+                <input id="newsletter1" type="text" class="form-control" placeholder="Correo electronico">
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>&copy; 2024 Estancol, SAS. Todos los derechos reservados.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+          </ul>
+        </div>
+      </footer>
     </div>
-    <div class="wcs_popup_header">
-      <span class="fa fa-whatsapp"></span>
-      <strong>Estancol - Servicio al cliente</strong>
-      <div class="wcs_popup_header_description">¿Necesidad de ayuda? Chatea con nosotros en Whatsapp</div>
+    <!-- end FOOTER 2-->
+
+    <!-- Button Whatsapp Structure 
+    https://www.youtube.com/watch?v=wnOMA7qBu2w&t=751s - Video poniendo boton whatsapp
+    https://github.com/juscoder/whatsapp-chat-support/tree/main - Repo 
+    -->
+    <div class="whatsapp_chat_support wcs_fixed_left" id="button-w">
+      <div class="wcs_button wcs_button_circle">
+        <span class="fa fa-whatsapp"></span>
       </div>  
-      <div class="wcs_popup_input" 
-            data-number="573114507839"
-            data-availability='{ "monday":"07:00-22:30", "tuesday":"07:00-22:30", "wednesday":"07:7030-22:30", "thursday":"07:00-22:30", "friday":"07:00-22:30", "saturday":"09:00-18:30", "sunday":"09:00-22:30" }'>
-            <input type="text" placeholder="Escribir aqui tu pregunta!" style="background-color: white;"/>
-            <i class="fa fa-play"></i>
+      <div class="wcs_popup">
+        <div class="wcs_popup_close">
+          <span class="fa fa-close"></span>
+        </div>
+        <div class="wcs_popup_header">
+          <span class="fa fa-whatsapp"></span>
+          <strong>Estancol - Servicio al cliente</strong>
+          <div class="wcs_popup_header_description">¿Necesidad de ayuda? Chatea con nosotros en Whatsapp</div>
+          </div>  
+          <div class="wcs_popup_input" 
+                data-number="573114507839"
+                data-availability='{ "monday":"07:00-22:30", "tuesday":"07:00-22:30", "wednesday":"07:7030-22:30", "thursday":"07:00-22:30", "friday":"07:00-22:30", "saturday":"09:00-18:30", "sunday":"09:00-22:30" }'>
+                <input type="text" placeholder="Escribir aqui tu pregunta!" style="background-color: white;"/>
+                <i class="fa fa-play"></i>
+          </div>
+          <div class="wcs_popup_avatar">
+            <img src="https://avatars.githubusercontent.com/janl?s=180" alt="">
+          </div>
       </div>
-      <div class="wcs_popup_avatar">
-        <img src="https://avatars.githubusercontent.com/janl?s=180" alt="">
-      </div>
-  </div>
-</div>
+    </div>
 
       <script src="../static/assets/dist/js/bootstrap.bundle.min.js"></script>
       <script src="../static/assets/js/checkout.js"></script></body>
       <!-- Enlazar JS Floating WhatsApp -->
       <!-- jQuery 1.8+ -->
       <script src="../static/plugin/components/jQuery/jquery-1.11.3.min.js"></script>
-      <!-- Plugin JS file -->
+      <!-- Plugin JS file whatsapp-->
       <script src="../static/plugin/components/moment/moment.min.js"></script>
       <script src="../static/plugin/components/moment/moment-timezone-with-data.min.js"></script> <!-- spanish language (es) -->
       <script src="../static/plugin/whatsapp-chat-support.js"></script>
@@ -514,54 +625,57 @@ https://github.com/juscoder/whatsapp-chat-support/tree/main - Repo
               defaultMsg : 'Me podrias ayudar con el catalogo',
           });
       </script>
+      <!-- Plugin JS file menu desplegable-->
+      <script type="text/javascript">
+        //	window.addEventListener("resize", function() {
+        //		"use strict"; window.location.reload(); 
+        //	});
+          document.addEventListener("DOMContentLoaded", function(){
+              /////// Prevent closing from click inside dropdown
+            document.querySelectorAll('.dropdown-menu').forEach(function(element){
+              element.addEventListener('click', function (e) {
+                e.stopPropagation();
+              });
+            })
+            // make it as accordion for smaller screens
+            if (window.innerWidth < 992) {
+  
+              // close all inner dropdowns when parent is closed
+              document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+                everydropdown.addEventListener('hidden.bs.dropdown', function () {
+                  // after dropdown is hidden, then find all submenus
+                    this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+                      // hide every submenu as well
+                      everysubmenu.style.display = 'none';
+                    });
+                })
+              });
+              
+              document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+                element.addEventListener('click', function (e) {
+            
+                    let nextEl = this.nextElementSibling;
+                    if(nextEl && nextEl.classList.contains('submenu')) {	
+                      // prevent opening link if link needs to open dropdown
+                      e.preventDefault();
+                      console.log(nextEl);
+                      if(nextEl.style.display == 'block'){
+                        nextEl.style.display = 'none';
+                      } else {
+                        nextEl.style.display = 'block';
+                      }
+  
+                    }
+                });
+              })
+            }
+            // end if innerWidth
+          }); 
+        // DOMContentLoaded  end
+      </script>
+
       {% block js %}
       {% endblock %}
-      <script type="text/javascript">
-//	window.addEventListener("resize", function() {
-//		"use strict"; window.location.reload(); 
-//	});
-	  document.addEventListener("DOMContentLoaded", function(){
-        /////// Prevent closing from click inside dropdown
-      document.querySelectorAll('.dropdown-menu').forEach(function(element){
-        element.addEventListener('click', function (e) {
-          e.stopPropagation();
-        });
-      })
-      // make it as accordion for smaller screens
-      if (window.innerWidth < 992) {
-
-        // close all inner dropdowns when parent is closed
-        document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
-          everydropdown.addEventListener('hidden.bs.dropdown', function () {
-            // after dropdown is hidden, then find all submenus
-              this.querySelectorAll('.submenu').forEach(function(everysubmenu){
-                // hide every submenu as well
-                everysubmenu.style.display = 'none';
-              });
-          })
-        });
-        
-        document.querySelectorAll('.dropdown-menu a').forEach(function(element){
-          element.addEventListener('click', function (e) {
       
-              let nextEl = this.nextElementSibling;
-              if(nextEl && nextEl.classList.contains('submenu')) {	
-                // prevent opening link if link needs to open dropdown
-                e.preventDefault();
-                console.log(nextEl);
-                if(nextEl.style.display == 'block'){
-                  nextEl.style.display = 'none';
-                } else {
-                  nextEl.style.display = 'block';
-                }
-
-              }
-          });
-        })
-      }
-      // end if innerWidth
-	  }); 
-	// DOMContentLoaded  end
-    </script>
     </body>
 </html>
