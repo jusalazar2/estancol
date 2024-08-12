@@ -156,6 +156,22 @@
       .card-zoom:hover {
         transform: scale(1.1);
       }
+
+      .link-zoom img {
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      .link-zoom:hover img {
+        transform: scale(1.2);
+      }
+
+      .li-zoom {
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      .li-zoom:hover {
+        transform: scale(1.2);
+      }
     </style> 
 
     {% block css %}
@@ -181,7 +197,7 @@
               aria-expanded="false"
               data-bs-toggle="dropdown"
               aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <svg class="bi my-1 theme-icon-active image-zoom" width="1em" height="1em"><use href="#circle-half"></use></svg>
         <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
       </button>
       <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
@@ -219,25 +235,25 @@
           </button>
 
           <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-            <a class="navbar-brand col-lg-1 me-0" href="/"> <!-- Centrado -->
+            <a class="navbar-brand col-lg-1 me-0 link-zoom" href="/"> <!-- Centrado -->
               <img src="../static/images/Logo-ESTANCOL-100X24.png" alt="Nombre de la imagen">
             </a>
 
             <ul class="navbar-nav col-lg-7 justify-content-lg-center">
-              <li class="nav-item">
+              <li class="nav-item li-zoom">
                 <a class="nav-link" href="/">Inicio</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item li-zoom">
                 <a class="nav-link" href="/nosotros">Nosotros</a>
               </li>
               <!-- Menu de servicios 
               <li class="nav-item">
                 <a class="nav-link" href="/servicios">Servicios</a>
               </li> -->
-              <li class="nav-item"> 
+              <li class="nav-item li-zoom"> 
                 <a class="nav-link" href="{% url 'productos' %}">Productos</a>
               </li>           
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown li-zoom">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Catalogo 
                 </a>
@@ -352,7 +368,7 @@
                 </ul>
               </li>
 
-              <li class="nav-item">
+              <li class="nav-item li-zoom">
                 <a class="nav-link" href="/contactenos">Contactenos</a>
               </li>
               <!-- Menu de un solo nivel 
