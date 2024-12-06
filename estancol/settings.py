@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-^!_+)&_nbncn0=6zgi^5^t$eoe*vbza7jagr!o*5u$$^#z*v9^
 DEBUG = True
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['127.0.0.1', '190.145.33.244' ,'190.145.33.241']
+ALLOWED_HOSTS = ['127.0.0.1', '190.145.33.244' ,'190.145.33.241','estanterias.co', 'estanterias.co:8000']
 
 # Application definition
 
