@@ -79,6 +79,105 @@
     display: block !important;
   }
 </style>
+<style>
+	/* Estilos del modal */
+.modal-content {
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #343a40;
+}
+
+/* Estilos de las tarjetas */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-cover {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card-cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Para que el contenido quede sobre el degradado */
+.card .d-flex {
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilos de los textos en las tarjetas */
+.card .text-shadow-1 {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+h3.display-6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+ul.d-flex li small {
+    color: #f8f9fa;
+}
+
+/* Mejora en el icono de usuario */
+	ul.d-flex li img {
+    border-radius: 50%;
+    border: 2px solid #fff;	
+}
+
+.card-animate {
+    transition: transform 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5	s ease-in-out; 
+    cursor: pointer;
+    transform-origin: center center; /* Punto de origen de la transformación en el centro */
+    z-index: 1;
+}
+
+.card-animate.active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.6); /* Mover y escalar suavemente al centro */
+    z-index: 1050;
+    width: 400px;
+    height: 500px;
+    ox-shadow: 0 0 30px 10px rgba(0, 255, 0, 0.5); /* Cambia el borde difuminado */
+	
+}
+
+.card-animate.inactive {
+    transform: translate(0, 0) scale(1); /* Vuelve a su tamaño y posición originales */
+}
+
+
+</style>
 {% endblock %} 
 {% block css2 %}
 <!-- Custom styles for this template -->
@@ -517,6 +616,10 @@
   </nav>
 </aside>
 
+<!--
+Drive de google con imagenes 
+https://drive.google.com/drive/folders/1hR9Fp3c7_iuJnn06AYoIQgrCTf9cdYxB
+-->
 <!-- Contenido -->
 <div class="bd-cheatsheet container-fluid bg-body">
   <!-- Estanterias -->
@@ -575,6 +678,59 @@
               </div>
               <div class="tab-pane fade" id="nav-Liviana_eco-Proyect" role="tabpanel" aria-labelledby="nav-Liviana_eco-Proyect-tab">
                 <div class="container" >
+				  <h2 class="pb-2 border-bottom">Ponal</h2>
+                  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch ">
+                    <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModalCenteredScrollable1">
+                      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('../static/images/Liviana\ eco\ -\ proyecto1.png');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">ponal</h3>                   
+                        </div>
+                      </div>
+                    </div>
+              
+                    <div class="col">
+                      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('../static/images/Liviana\ eco\ -\ proyecto2.png');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">invima</h3>                        
+                        </div>
+                      </div>
+                    </div>
+              
+                    <div class="col">
+                      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('../static/images/Liviana\ eco\ -\ proyecto3.png');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">archivo datos</h3>                         
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+				  <h2 class="pb-2 border-bottom">Invima</h2>
+                  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch ">
+                    <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModalCenteredScrollable1">
+                      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('../static/images/Liviana\ eco\ -\ proyecto1.png');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">ponal</h3>                   
+                        </div>
+                      </div>
+                    </div>
+              
+                    <div class="col">
+                      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('../static/images/Liviana\ eco\ -\ proyecto2.png');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">invima</h3>                        
+                        </div>
+                      </div>
+                    </div>
+              
+                    <div class="col">
+                      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('../static/images/Liviana\ eco\ -\ proyecto3.png');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">archivo datos</h3>                         
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+				  <h2 class="pb-2 border-bottom">Archivos y datos</h2>
                   <div class="row row-cols-1 row-cols-lg-3 align-items-stretch ">
                     <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModalCenteredScrollable1">
                       <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('../static/images/Liviana\ eco\ -\ proyecto1.png');">
@@ -12794,31 +12950,195 @@
   </div>
 </div>
 
-<div class="modal fade" id="exampleModalCenteredScrollable1" tabindex="-1" aria-labelledby="exampleModalCenteredScrollableTitle1" aria-hidden="true" >
-  <div class="modal-dialog modal-fullscreen">
-    <div class="modal-content ">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalCenteredScrollableTitle">
-          Ponal
-        </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
-      </div>
-      <div class="modal-body">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg img-fluid" width="100%" height="450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false">
-          <title>Placeholder</title>
-          <image href="../static/images/Liviana eco - proyecto1.png" width="100%" height="100%" preserveAspectRatio="none" />
-          <rect class="opacity-0" width="100%" height="100%" fill="var(--bs-secondary-color)"/>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Responsive image</text>
-        </svg>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>        
-      </div>
-    </div>
-  </div>
+<!-- Repite para otras tarjetas 
+<div class="modal fade" id="exampleModalCenteredScrollable1" tabindex="-1" aria-labelledby="exampleModalCenteredScrollableTitle1" aria-hidden="true">
+	<div class="modal-dialog modal-fullscreen">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="exampleModalCenteredScrollableTitle">Ponal</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-1 py-4">
+			<div class="col">
+			  <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg'); height: 400px; width: 300px ;">
+				<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+				  <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+				  <ul class="d-flex list-unstyled mt-auto">
+					<li class="me-auto">
+					  <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+					</li>
+					<li class="d-flex align-items-center me-3">
+					  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+					  <small>Earth</small>
+					</li>
+					<li class="d-flex align-items-center">
+					  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+					  <small>3d</small>
+					</li>
+				  </ul>
+				</div>
+			  </div>
+			</div>
+			<div class="col">
+				<div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg'); height: 400px; width: 300px ;">
+				  <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+					<h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+					<ul class="d-flex list-unstyled mt-auto">
+					  <li class="me-auto">
+						<img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+					  </li>
+					  <li class="d-flex align-items-center me-3">
+						<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+						<small>Earth</small>
+					  </li>
+					  <li class="d-flex align-items-center">
+						<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+						<small>3d</small>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col">
+				<div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg'); height: 400px; width: 300px ;">
+				  <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+					<h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+					<ul class="d-flex list-unstyled mt-auto">
+					  <li class="me-auto">
+						<img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+					  </li>
+					  <li class="d-flex align-items-center me-3">
+						<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+						<small>Earth</small>
+					  </li>
+					  <li class="d-flex align-items-center">
+						<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+						<small>3d</small>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col">
+				<div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg'); height: 400px; width: 300px ;">
+				  <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+					<h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+					<ul class="d-flex list-unstyled mt-auto">
+					  <li class="me-auto">
+						<img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+					  </li>
+					  <li class="d-flex align-items-center me-3">
+						<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+						<small>Earth</small>
+					  </li>
+					  <li class="d-flex align-items-center">
+						<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+						<small>3d</small>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col">
+				<div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg'); height: 400px; width: 300px ;">
+				  <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+					<h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+					<ul class="d-flex list-unstyled mt-auto">
+					  <li class="me-auto">
+						<img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+					  </li>
+					  <li class="d-flex align-items-center me-3">
+						<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+						<small>Earth</small>
+					  </li>
+					  <li class="d-flex align-items-center">
+						<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+						<small>3d</small>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col">
+				<div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg'); height: 400px; width: 300px ;">
+				  <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+					<h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+					<ul class="d-flex list-unstyled mt-auto">
+					  <li class="me-auto">
+						<img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+					  </li>
+					  <li class="d-flex align-items-center me-3">
+						<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+						<small>Earth</small>
+					  </li>
+					  <li class="d-flex align-items-center">
+						<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+						<small>3d</small>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+  
+			
+  
+		  </div>
+		</div>
+	
+	  </div>
+	</div>
 </div>
+-->
+<div class="modal fade" id="exampleModalCenteredScrollable1" tabindex="-1" aria-labelledby="exampleModalCenteredScrollableTitle1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalCenteredScrollableTitle">Ponal</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row d-flex justify-content-center row-cols-1 row-cols-md-3  row-cols-lg-4 g-0 py-2">
+                    <!-- Tarjeta 1 -->
+                    <div class="col d-flex justify-content-center">
+                        <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg card-animate" style="background-image: url('../static/images/Liviana-eco/proyectos/invima/image1.JPG'); height: 400px; width: 300px;">
+                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>                               
+                            </div>
+                        </div>
+                    </div>
+					<div class="col d-flex justify-content-center">
+                        <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg card-animate" style="background-image: url('../static/images/Liviana-eco/proyectos/invima/image2.JPG'); height: 400px; width: 300px;">
+                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>                               
+                            </div>
+                        </div>
+                    </div>
+					<div class="col d-flex justify-content-center">
+                        <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg card-animate" style="background-image: url('../static/images/Liviana-eco/proyectos/invima/image3.JPG'); height: 400px; width: 300px;">
+                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>                               
+                            </div>
+                        </div>
+                    </div>
+					<div class="col d-flex justify-content-center">
+                        <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg card-animate" style="background-image: url('../static/images/Liviana-eco/proyectos/invima/image4.png'); height: 400px; width: 300px;">
+                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>                               
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+			<div class="modal-footer">
+                <h1 class="modal-title fs-5" id="exampleModalCenteredScrollableTitle">Ponal</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
 
 
 <main></main>
@@ -12854,6 +13174,35 @@
       window.scrollTo(0, 150); // Cambia 200 por la cantidad de píxeles que desees
     }
   });
+
+  document.querySelectorAll('.card-animate').forEach((card) => {
+    card.addEventListener('click', function(event) {
+        if (this.classList.contains('active')) {
+            this.classList.remove('active');
+        } else {
+            // Elimina 'active' de todas las tarjetas antes de activar la seleccionada
+            document.querySelectorAll('.card-animate').forEach((el) => el.classList.remove('active'));
+
+            // Añade 'active' a la tarjeta seleccionada
+            this.classList.add('active');
+        }
+        
+        // Evitar la propagación del evento para que no se cierre automáticamente
+        event.stopPropagation();
+    });
+});
+
+// Cerrar la tarjeta activa al hacer clic fuera de la tarjeta
+document.addEventListener('click', function() {
+    document.querySelectorAll('.card-animate').forEach((card) => {
+        card.classList.remove('active');
+    });
+});
+
+
+
+
+
   </script>
 
   <script src="../static/js/cheatsheet.js"></script>
