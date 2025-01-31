@@ -30,3 +30,15 @@ python -m venv venv - Para crear el entorno
 deactivate - Apaga el entorno virtual
 
 pip install -r .\requerements.txt - Instala las dependencias en el entorno virutal 
+
+
+
+Este codigo es para siempre ponerlo antes de terminar el push
+python manage.py collectstatic
+
+este codigo es para cuando eliminamos la carpeta del servidor
+python3 -m venv myenv
+source myenv/bin/activate
+pip install -r requirements.txt
+pip install gunicorn
+gunicorn --workers 3 estancol.wsgi:application
