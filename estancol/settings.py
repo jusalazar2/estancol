@@ -12,6 +12,25 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import ssl
+EMAIL_SSL_CONTEXT = ssl._create_unverified_context()
+
+#correo electronico
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+EMAIL_HOST = 'smtp.estanteriasdecolombia.com'
+
+EMAIL_PORT = 587  # Cambia 465 por 587
+EMAIL_USE_TLS = True  # Activa TLS
+EMAIL_USE_SSL = False  # Desactiva SSL (no usar SSL y TLS juntos)
+
+EMAIL_HOST_USER = 'proyectos@estanteriasdecolombia.com'  # Cambia esto por tu correo
+EMAIL_HOST_PASSWORD = 'Email$Edc.8931'  # Usa una contraseña segura o una app password
+
+# Deshabilitar verificación de certificado (solo para pruebas locales)
+#EMAIL_SSL_CONTEXT = ssl._create_unverified_context()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

@@ -49,22 +49,22 @@
 
   <div class="nav-scroller py-1 mb-3 border-bottom">
     <nav class="nav nav-underline justify-content-between">      
-      <a class="nav-item nav-link link-body-emphasis active li-zoom" href="#">Liviana</a>
-      <a class="nav-item nav-link link-body-emphasis li-zoom" href="#">Mezanine</a>
-      <a class="nav-item nav-link link-body-emphasis li-zoom" href="#">Cantilever</a>
-      <a class="nav-item nav-link link-body-emphasis li-zoom" href="#">Liviana Eco</a>
-      <a class="nav-item nav-link link-body-emphasis li-zoom" href="#">Liviana Standard</a>
-      <a class="nav-item nav-link link-body-emphasis li-zoom" href="#">Bibliofijos</a>
-      <a class="nav-item nav-link link-body-emphasis li-zoom" href="#">Semi pesada</a>
-      <a class="nav-item nav-link link-body-emphasis li-zoom" href="#">Pesada</a>
-      <a class="nav-item nav-link link-body-emphasis li-zoom" href="#">Super carga</a>
-      <a class="nav-item nav-link link-body-emphasis li-zoom" href="#">Complementos</a>      
+      <a class="nav-item nav-link link-body-emphasis active li-zoom" href="{% url 'productos' %}#Liviana_eco">Liviana</a>
+      <a class="nav-item nav-link link-body-emphasis li-zoom" href="{% url 'productos' %}#Estanteria_mezanine">Mezanine</a>
+      <a class="nav-item nav-link link-body-emphasis li-zoom" href="{% url 'productos' %}#Estanteria_cantilever">Cantilever</a>
+      <a class="nav-item nav-link link-body-emphasis li-zoom" href="{% url 'productos' %}#Liviana_eco">Liviana Eco</a>
+      <a class="nav-item nav-link link-body-emphasis li-zoom" href="{% url 'productos' %}#Liviana_standard">Liviana Standard</a>
+      <a class="nav-item nav-link link-body-emphasis li-zoom" href="{% url 'productos' %}#Estanteria_bibliofijos">Bibliofijos</a>
+      <a class="nav-item nav-link link-body-emphasis li-zoom" href="{% url 'productos' %}#Estanteria_semipesada">Semi pesada</a>
+      <a class="nav-item nav-link link-body-emphasis li-zoom" href="{% url 'productos' %}#Estanteria_pesada">Pesada</a>
+      <a class="nav-item nav-link link-body-emphasis li-zoom" href="{% url 'productos' %}#Estanteria_superpesada">Super pesada</a>
+      <a class="nav-item nav-link link-body-emphasis li-zoom" href="{% url 'productos' %}#Entrepiso_troquelado">Complementos</a>      
     </nav>
   </div>
 </div>
 
 <main class="container">
-  <div class="div-zoom p-4 p-md-5 mb-4  border border-success rounded text-body-emphasis bg-body-secondary" style="background-image: url('../static/images/Imagen-1.jpg'); background-size: cover; background-position: center;">
+  <div class="div-zoom p-4 p-md-5 mb-4  border border-success rounded text-body-emphasis bg-body-secondary" style="background-image: url('../static/images/header-estanterias.jpg'); background-size: cover; background-position: center;">
     <div class="col-lg-6 px-0 " >
       <h1 class="display-4 fst-italic">TECNOLOGIA</h1>
       <p class="lead my-3">Contamos con procesos productivos que optimizan los tiempos de respuesta de nuestra empresa, haciendo posible el cumplimiento oportuno de la entrega del producto terminado. Para esto hacemos uso Maquinaria full CNC en todas nuestras etapas de corte, punzonado y plegado, lo cual garantiza precisión en cada una de nuestras piezas y productos. También somos pioneros en la fabricación directa de perfiles para Estantería pesadas sin empalmes, a medidas  de 10 y 12 ms.</p>
@@ -90,7 +90,7 @@
         <div class="col-auto d-none d-lg-block">
           <svg class="bd-placeholder-img" width="200" height="420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Mision</title>
-            <image href="../static/images/Imagen-5.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+            <image href="../static/images/mision.jpg" width="100%" height="100%" preserveAspectRatio="none" />
             <rect width="100%" height="100%" fill="rgba(0,0,0,0)"/>
             <text x="50%" y="50%" fill="#eceeef" dy=".3em">Mision</text></svg>
         </div>
@@ -110,9 +110,9 @@
           </a>--> 
         </div>
         <div class="col-auto d-none d-lg-block">        
-          <svg class="bd-placeholder-img" width="200" height="350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <svg class="bd-placeholder-img" width="200" height="420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Vision</title>
-            <image href="../static/images/Imagen-5.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+            <image href="../static/images/vision.jpg" width="100%" height="100%" preserveAspectRatio="none" />
             <rect width="100%" height="100%" fill="rgba(0,0,0,0)"/>
             <text x="50%" y="50%" fill="#eceeef" dy=".3em">Vision</text>
           </svg>      
@@ -129,7 +129,7 @@
       </h3>
 
       <article class="blog-post">
-        <h2 class="display-5 link-body-emphasis mb-1">Porposito</h2>
+        <h2 class="display-5 link-body-emphasis mb-1">Proposito</h2>
         <p class="blog-post-meta">2024 - <a href="#">Estancol</a></p>
 
         <p>Una empresa metalmecánica con producto 100% colombiano,  especializada en la fabricación e instalación de Estanterías metálicas de tipo  industrial en Bogotá. Brindando Soluciones técnicas en almacenamiento  para bodegas buscando optimizar los espacios, mejorando las operaciones  de distribución control y manipulación de producto.</p>
@@ -139,18 +139,24 @@
         <p>A través de desarrollos propios y tecnología de punta damos respuesta a  diversos requerimientos y necesidades de la industria, involucrando diversos  procesos apoyados en un equipo multidisciplinario de personas capacitadas  y comprometidas en cada una de las áreas de trabajo teniendo presente la  satisfacción de nuestros clientes.
           Todo estos lo logramos gracias a dos factores: Tecnología de punta y talento  humano calificado.
           </p>
+          <svg class="bd-placeholder-img" width="100%" height="220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>ISO</title>
+            <image href="../static/images/iso.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+            
+          </svg> 
+          <!-- 
         <h2>Estanteria</h2>
 
         
         <p>Liviana</p>
-        <!-- 
+        
         <blockquote class="blockquote">
           <p>Quoted text goes here.</p>
         </blockquote>
-        -->
+        
         <p>text.</p>
 
-        <!-- 
+        
         <h3>Example lists</h3>
         <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout. This is an example unordered list:</p>
         <ul>
@@ -252,12 +258,12 @@
         </ul>
         <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
       </article>
-      -->
+      
       <nav class="blog-pagination" aria-label="Pagination">
         <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
         <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
       </nav>
-
+      -->
     </div>
 
     <div class="col-md-4">
@@ -315,16 +321,7 @@
           </ul>
         </div>
 
-        <div class="p-4">
-          <h4 class="fst-italic">Proyectos</h4>
-          <ol class="list-unstyled mb-0">
-            <li><a href="#">March 2024</a></li>
-            <li><a href="#">February 2023</a></li>
-            <li><a href="#">January 2022</a></li>
-            <li><a href="#">December 2021</a></li>
-            <li><a href="#">November 2020</a></li>            
-          </ol>
-        </div>
+      
 
        
       </div>

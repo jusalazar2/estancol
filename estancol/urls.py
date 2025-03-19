@@ -22,6 +22,7 @@ from productos import views as Productos
 from servicios import views as Servicios
 from contactenos import views as Contactenos
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Inicio.cargarInicio , name='inicio'),
@@ -29,4 +30,5 @@ urlpatterns = [
     path('productos/', Productos.cargarInicio , name='productos'),
     path('servicios/', Servicios.cargarInicio , name='servicios'),
     path('contactenos/', Contactenos.cargarInicio , name='contactenos'),
+    path('enviar_correo/', Inicio.enviar_correo, name='enviar_correo'),
 ]

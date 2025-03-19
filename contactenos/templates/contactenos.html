@@ -34,64 +34,59 @@
       <div class="col-md-5 col-lg-4 order-md-last">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span class="text-primary">Horarios de atencion</span>
-          <span class="badge bg-primary rounded-pill">3</span>
+          <span class="badge bg-primary rounded-pill">*</span>
         </h4>
         <ul class="list-group mb-3">
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Lunes</h6>
-              <small class="text-body-secondary">7 Am - 7 PM</small>
+              <small class="text-body-secondary">8 Am - 5 PM</small>
             </div>
-            <span class="text-body-secondary">12 Horas </span>
+            <span class="text-body-secondary">8 Horas </span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Martes</h6>
-              <small class="text-body-secondary">7 Am - 7 PM</small>
+              <small class="text-body-secondary">8 Am - 5 PM</small>
             </div>
-            <span class="text-body-secondary">12 Horas </span>
+            <span class="text-body-secondary">8 Horas </span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Miercoles</h6>
-              <small class="text-body-secondary">7 Am - 7 PM</small>
+              <small class="text-body-secondary">8 Am - 5 PM</small>
             </div>
-            <span class="text-body-secondary">12 Horas </span>
+            <span class="text-body-secondary">8 Horas </span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Jueves</h6>
-              <small class="text-body-secondary">7 Am - 7 PM</small>
+              <small class="text-body-secondary">8 Am - 5 PM</small>
             </div>
-            <span class="text-body-secondary">12 Horas </span>
+            <span class="text-body-secondary">8 Horas </span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Viernes</h6>
-              <small class="text-body-secondary">7 Am - 7 PM</small>
+              <small class="text-body-secondary">8 Am - 5 PM</small>
             </div>
-            <span class="text-body-secondary">12 Horas </span>
+            <span class="text-body-secondary">8 Horas </span>
           </li>
           <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
             <div class="text-success">
               <h6 class="my-0">Sabado</h6>
-              <small class="text-body-secondary">7 Am - 5 PM</small>
+              <small class="text-body-secondary">8 Am - 1 PM</small>
             </div>
-            <span class="text-body-secondary">10 Horas </span>
+            <span class="text-body-secondary">5 Horas </span>
           </li>
          
-        </ul>
-
-        <form class="card p-2">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Promo code">
-            <button type="submit" class="btn btn-secondary">Redimir</button>
-          </div>
-        </form>
+        </ul>  
+        
       </div>
       <div class="col-md-7 col-lg-8">
         <h4 class="mb-3">Datos de contacto</h4>
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" novalidate action="{% url 'enviar_correo' %}" method="POST">
+          {% csrf_token %}
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Nombres</label>
@@ -109,20 +104,10 @@
               </div>
             </div>
 
-            <div class="col-12">
-              <label for="username" class="form-label">Apodo</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
-                <input type="text" class="form-control" id="username" placeholder="Username" required>
-              <div class="invalid-feedback">
-                  Your username is required.
-                </div>
-              </div>
-            </div>
-
+            
             <div class="col-12">
               <label for="email" class="form-label">Correo electronico <span class="text-body-secondary">(Optional)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <input type="email" class="form-control" id="email" placeholder="Correo@ejemplo.com">
               <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
               </div>
@@ -130,17 +115,15 @@
 
             <div class="col-12">
               <label for="address" class="form-label">Direecion</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+              <input type="text" class="form-control" id="address" placeholder="" required>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
             </div>
 
-            <div class="col-12">
-              <label for="address2" class="form-label">Direccion 2 <span class="text-body-secondary">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-            </div>
-
+            
+            
+            
             <div class="col-md-5">
               <label for="country" class="form-label">Pais</label>
               <select class="form-select" id="country" required>
@@ -172,24 +155,31 @@
                 Zip code required.
               </div>
             </div>
+
+            <div class="col-12">
+              <label for="observaciones" class="form-label">Observaciones</label>
+              <textarea class="form-control" id="observaciones" placeholder="Escribe tus observaciones aquí..." required></textarea>
+              <div class="invalid-feedback">
+                Por favor, ingresa una observación válida.
+              </div>
+            </div>
+
+
           </div>
 
-          <hr class="my-4">
+          
 
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address">
-            <label class="form-check-label" for="same-address">La dirección de envío es la misma que mi dirección de facturación.</label>
-          </div>
+          <hr class="my-4">  
+       
 
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info">
-            <label class="form-check-label" for="save-info">Guarda esta información para la próxima vez.</label>
-          </div>
-
-          <hr class="my-4">
-
-          <button class="w-100 btn btn-outline-success   btn-lg" type="submit">Enviar datos</button>
+          <button class="w-100 btn btn-outline-success btn-lg" type="submit">Enviar datos</button>
         </form>
+
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
   </main>
